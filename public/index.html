@@ -34,9 +34,9 @@
             </div>
             <div class="input-field col s11">
               <sound-manager></sound-manager>
-                  <p>Currently Playing: {{song[0].title}} by {{ song[0].artist }} ({{ currentPostion }} / {{ currentDuration }})</p>
-                  <button ng-click="addSong()" music-player="play" add-song="song[0]">{{mp3.title}}</button>
-                  <button music-player add-song="song[0]">+</button>
+                  <p>Currently Playing: {{song.title}} by {{ song.artist }} ({{ currentPostion }} / {{ currentDuration }})</p>
+                  <button ng-click="addSong()" music-player="play" add-song="songs[0]">{{mp3.title}}</button>
+                  <button music-player add-song="songs">+</button>
                   <br><br>
                   <div class="seekBase" seek-track="">
                   <div class="seekLoad" ng-style="{width : ( progress + '%' )}" style="">
@@ -46,7 +46,7 @@
                   <button play-music>Play</button>&nbsp;&nbsp;| &nbsp;&nbsp;<button pause-music>Pause</button>&nbsp;&nbsp;| &nbsp;&nbsp;<button stop-music>Stop</button><br><br>
                   <hr><br>
                   <span>Playlist :</span>
-                  <a play-from-playlist="song[0]">{{song[0].title}}</a>
+                  <a ng-repeat="song in songs" play-from-playlist="songs">{{song.title}}</a>
             </div>
           </div>
         </div>

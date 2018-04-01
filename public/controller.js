@@ -3,7 +3,7 @@ var app = angular.module('playlistApp', ['angularSoundManager']);
 app.controller('app', function($scope) {
 
 	// var socket = io.connect('http://localhost:3000');
-	$scope.song = [];
+	$scope.songs = [];
 	$scope.send = function() {
 
 		/*socket.emit('addPlay',
@@ -22,15 +22,15 @@ app.controller('app', function($scope) {
 
 	$scope.addSong = function() {
 		console.log("addSong");
-		$scope.song.push($scope.mp3);
-		console.log($scope.song);
+		$scope.songs.push($scope.mp3);
+		console.log($scope.songs);
 	};
 
 	$scope.mp3 = {
 		id: 'one',
 		title: 'Rain',
 		artist: 'Drake',
-		url: 'https://www.youtube.com/watch?v=yIIGQB6EMAM'
+		url: './mp3/Cold Funk - Funkorama - Kevin MacLeod (No Copyright Music).mp3'
 	};
 
 
